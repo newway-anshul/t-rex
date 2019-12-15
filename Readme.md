@@ -1,1 +1,2 @@
-#T-Rex Game created using canvas
+# T-Rex Game created using canvas
+##  20% completed
