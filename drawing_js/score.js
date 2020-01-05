@@ -1,8 +1,7 @@
 var counter = 00000000;
 function drawscore(ctx){
     ++counter;
-    ctx.clearRect(650,0,150,20);    
-    ctx.fillRect(650,0,150,20);
+    clearCanvas(ctx,650,0,150,20);
     ctx.save();
     ctx.fillStyle = "rgb(0,0,0)";
     ctx.font = '15px serif'

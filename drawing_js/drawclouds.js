@@ -4,8 +4,7 @@ var clouds=getcloudcount();
 function drawcloud(ctx,img,speed) {
     if (!pre_clouds_done) {
         clouds.forEach(e => {
-            ctx.clearRect(800+e.x, e.y, 50, 25);
-            ctx.fillRect(800+e.x, e.y, 50, 25);
+            clearCanvas(ctx,800+e.x, e.y, 50, 25);
         });
         clouds.forEach((element,index) => {
             if(800+element.x-speed<=-50){
@@ -14,7 +13,7 @@ function drawcloud(ctx,img,speed) {
                 clouds.length == 0?pre_clouds_done = true:'';
             }
             else{
-            ctx.drawImage(img, 84, 0, 50, 25, 800+element.x-speed, element.y, 50, 25);
+                drawImage(ctx,img, 84, 0, 50, 25, 800+element.x-speed, element.y, 50, 25);
             clouds[index].x=element.x-speed;
             }
         });

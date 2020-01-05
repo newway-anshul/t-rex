@@ -2,6 +2,9 @@ canvas {
     display: block;
     margin: auto;
 }
-.imgclass{
-    background-color: green
+.trex-btn{
+    text-align: center;
+}
+.trex-btn button:hover{
+    cursor: pointer;
 }

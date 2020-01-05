@@ -5,10 +5,12 @@
     <meta charset="utf-8" />
     <title>T-Rex</title>
     <link rel="stylesheet" href="main.css">
+    <script src="drawing_js/utils.js"></script>
     <script src="drawing_js/drawhorizontalline.js" type="text/javascript" defer></script>
     <script src="drawing_js/movingdragon.js" defer></script>
     <script src="drawing_js/drawclouds.js" defer></script>
-    <script src="./drawing_js/score.js" defer></script>
+    <script src="drawing_js/score.js" defer></script>
+    <script src="drawing_js/gameover.js" defer></script>
     <script src="main.js" type="text/javascript" defer></script>
 </head>
 
@@ -21,6 +23,10 @@
     background-color: black;
 "></div>
     <canvas id="canvas" width="800" height="200"></canvas>
+    <div class="trex-btn">
+      <button type="button" value="restart">Restart</button>
+      <button type="button" value="restart">Pause</button>
+    </div>
 </body>
 
 </html>

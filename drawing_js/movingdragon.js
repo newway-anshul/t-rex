@@ -18,14 +18,13 @@ function drawmovingdragon(ctx,img){
        return
    } 
    else{
-   ctx.clearRect(dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
-   ctx.fillRect(dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+    clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
    if(initialimage == 0){
-       ctx.drawImage(img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+    drawImage(ctx,img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
        initialimage = 1;
    }
    else{
-    ctx.drawImage(img,dragon_img_positions[1].x,dragon_img_positions[1].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+    drawImage(ctx,img,dragon_img_positions[1].x,dragon_img_positions[1].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
     initialimage = 0;
    }
    }
@@ -34,13 +33,11 @@ function drawmovingdragon(ctx,img){
 function jumpdragon(ctx,img){
     isjumping = true;
     var vy=1;
-    ctx.clearRect(dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
-    ctx.fillRect(dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+    clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
     var pre_i=0
     for(let i =0;i<10;i++){
-        ctx.clearRect(dragon_screen_position.x,dragon_screen_position.y-vy*pre_i,dragon_width,dragon_height);
-        ctx.fillRect(dragon_screen_position.x,dragon_screen_position.y-vy*pre_i,dragon_width,dragon_height);
-        ctx.drawImage(img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y-vy*i,dragon_width,dragon_height);
+        clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y-vy*pre_i,dragon_width,dragon_height);
+        drawImage(ctx,img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y-vy*i,dragon_width,dragon_height);
         pre_i = i;
     } 
     // for(let i =0;i<10;i++){
