@@ -1,33 +1,7 @@
-#dragon{
-    width: 44px;
-    height: 47px;
-    background-image : url(./1x-trex.png);
-    background-repeat: no-repeat;
-    background-position-x:-88px;
-    position: absolute;
-    top: 335px;
-    left: 20px;
-  }
-  
-
-.jump{
-    animation: jumpi 400ms 1;
+canvas {
+    display: block;
+    margin: auto;
 }
-
-@keyframes jumpi {
-    0%{
-        top:315px
-    }
-    25%{
-      top:295px
-    }
-    50%{
-     top:275px
-    }
-    75%{
-     top:255px
-    }
-    100%{
-        top:235px
-    }
+.imgclass{
+    background-color: green
 }

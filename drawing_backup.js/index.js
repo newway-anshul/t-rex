@@ -124,4 +124,4 @@ function jump(e){
         clearTimeout(jumptimer)
     },1000)
 }
-dragonMove();
+//dragonMove();
