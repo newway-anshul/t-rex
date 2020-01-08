@@ -7,8 +7,9 @@ const log = (msg) => {
 }
 //context setup
 ctx.fillStyle = 'white';
+ctx.strokeStyle ="white";
 ctx.fillRect(0, 0, canvas_width, canvas_height);
-ctx.lineWidth = 1.5;
+ctx.lineWidth = 1;
 //end
 
 // creating scene
@@ -20,10 +21,11 @@ img.classList = "imgclass"
 let cloud_x, cloud_y, cloud_old_x, cloud_old_y;
 img.onload = () => {
     timer = setInterval(() => {
-        Score.drawscore(ctx);
-        Dragon.drawmovingdragon(ctx, img);
+        Score.drawscore(ctx);        
         Ground.drawhorizontalline(ctx, img, speed);
         Clouds.drawcloud(ctx, img, speed);
+        drawObstacles(ctx,img,speed);
+        Dragon.drawmovingdragon(ctx, img);
     }, 100);
 }
 //end

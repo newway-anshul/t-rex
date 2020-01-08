@@ -8,10 +8,10 @@ var Dragon = (function () {
     }];
     var initialimage = 0;
     var dragon_width = 44;
-    var dragon_height = 58;
+    var dragon_height = 50;
     var dragon_screen_position = {
         x: 10,
-        y: 130
+        y: 140
     }
     var isjumping = false;
     return {
@@ -20,7 +20,9 @@ var Dragon = (function () {
                 return
             }
             else {
-                Utils.clearCanvas(ctx, dragon_screen_position.x, dragon_screen_position.y, dragon_width, dragon_height);
+                /*we are not clearing as it is not required becase we are showing same width and  height image at same location
+                  Utils.clearCanvas(ctx, dragon_screen_position.x, dragon_screen_position.y, dragon_width, dragon_height);
+                */
                 if (initialimage == 0) {
                     Utils.drawImage(ctx, img, dragon_img_positions[0].x, dragon_img_positions[0].y, dragon_width, dragon_height, dragon_screen_position.x, dragon_screen_position.y, dragon_width, dragon_height);
                     initialimage = 1;
@@ -30,7 +32,7 @@ var Dragon = (function () {
                     initialimage = 0;
                 }
             }
-
+           
         },
         jumpdragon: function (ctx, img) {
 

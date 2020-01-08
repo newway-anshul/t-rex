@@ -10,7 +10,7 @@ var Score = (function () {
             ++counter;
             Utils.clearCanvas(ctx, 650, 0, 150, 20);
             ctx.save();
-            ctx.fillStyle = "rgb(0,0,0)";
+            ctx.fillStyle = "rgb(0,00,00)";
             ctx.font = '15px serif'
             ctx.fillText("Your Score : " + pad(counter, 5), 650, 20);
             ctx.restore();
