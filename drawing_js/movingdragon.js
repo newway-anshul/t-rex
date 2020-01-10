@@ -14,10 +14,15 @@ var Dragon = (function () {
         y: 140
     }
     var isjumping = false;
+    var vy = .5;
+    var max_height = false;
+    var direction = 1;
+    
     return {
         drawmovingdragon: function (ctx, img) {
+            
             if (isjumping) {
-                return
+                Dragon.jumpdragon(ctx,img);
             }
             else {
                 /*we are not clearing as it is not required becase we are showing same width and  height image at same location
@@ -32,13 +37,159 @@ var Dragon = (function () {
                     initialimage = 0;
                 }
             }
-           
-        },
+            
+         },
         jumpdragon: function (ctx, img) {
+           isjumping = true;
+           if(max_height){
+               direction = -1;
+           }
+           Utils.clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y+10*direction*vy,dragon_width,dragon_height);
+           Utils.drawImage(ctx,img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+           dragon_screen_position.y=dragon_screen_position.y-direction*10*vy;  
+           if(dragon_screen_position.y==60){
+               max_height = true;
+           }  
+           if(max_height && dragon_screen_position.y == 145){
+               isjumping = false;
+               max_height = false;
+               dragon_screen_position.y = 140;
+               Utils.clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y+10*direction*vy,dragon_width,dragon_height);
+               Utils.drawImage(ctx,img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
+               direction = 1
+               dragon_screen_position.y = 140;
+               
+           }    
+           
 
         }
     }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function drawmovingdragon(ctx,img){

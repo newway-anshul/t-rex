@@ -37,6 +37,6 @@ function getobstacles(){
 }
 function checkforcollision(element,index,speed){
     if (element.x+10  == 50) {
-        alert('collided '+index);
+      //  alert('collided '+index);
     }
 }
