@@ -14,6 +14,10 @@ var Score = (function () {
             ctx.font = '15px serif'
             ctx.fillText("Your Score : " + pad(counter, 5), 650, 20);
             ctx.restore();
+        },
+        resetScore:function(){
+            counter = 0
         }
     }
 })();
+

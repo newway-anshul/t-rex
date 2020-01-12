@@ -1,7 +1,7 @@
 var Clouds = (function () {
     var pre_clouds_done = false;
     var clouds = getcloudcount();
-
+    
     function getcloudcount() {
 
         var count = Math.floor(Math.random() * 4 + 1);
@@ -34,6 +34,9 @@ var Clouds = (function () {
                 log('drawing clouds' + clouds.length);
                 pre_clouds_done = false;
             }
+        },
+        resetcloud:function(){
+            pre_clouds_done = true;
         }
     }
 })();

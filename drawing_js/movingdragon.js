@@ -14,7 +14,7 @@ var Dragon = (function () {
         y: 140
     }
     var isjumping = false;
-    var vy = .5;
+    var vy = 10;
     var max_height = false;
     var direction = 1;
     
@@ -46,11 +46,11 @@ var Dragon = (function () {
            }
            Utils.clearCanvas(ctx,dragon_screen_position.x,dragon_screen_position.y+10*direction*vy,dragon_width,dragon_height);
            Utils.drawImage(ctx,img,dragon_img_positions[0].x,dragon_img_positions[0].y,dragon_width,dragon_height,dragon_screen_position.x,dragon_screen_position.y,dragon_width,dragon_height);
-           dragon_screen_position.y=dragon_screen_position.y-direction*10*vy;  
+           dragon_screen_position.y=dragon_screen_position.y-direction*vy;  
            if(dragon_screen_position.y==60){
                max_height = true;
            }  
-           if(max_height && dragon_screen_position.y == 145){
+           if(max_height && dragon_screen_position.y>=145){
                isjumping = false;
                max_height = false;
                dragon_screen_position.y = 140;
@@ -62,6 +62,16 @@ var Dragon = (function () {
            }    
            
 
+        },
+        getDragonPosition:function(){
+            return dragon_screen_position;
+        },
+        resetDragon:function(){
+            isjumping = false;
+            dragon_screen_position = {
+                x:10,
+                y:140,
+            }
         }
     }
 })();
