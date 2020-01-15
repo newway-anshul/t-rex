@@ -144,8 +144,12 @@ var Obstacles = (function () {
 
     function checkforcollision(ctx,img,element) {
         let dragonPosition = Dragon.getDragonPosition();
-        if (element.obs_screen_x  < 55) {
-            if (dragonPosition.y >=element.obs_screen_y) {
+        if (element.obs_screen_x  < 50 && element.obs_screen_x >0) {
+            if ( dragonPosition.y == element.obs_screen_y || 
+                (dragonPosition.y+50 > element.obs_screen_y 
+                    && 
+                dragonPosition.y+50<element.obs_screen_y+element.obs_image.h))
+                {
                 Utils.sound().out()
                 GameOver.gameover(ctx,img);               
             }
